@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    font-size: 9px;
+    font-family: "Open Sans", Arial, sans-serif;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-areas:
+      "navbar mainblock";
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  nav {
+    grid-area: navbar;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    align-items: center;
+    font-size: 2.5em;
+    height: 100%;
+    border-right: solid;
+    border-color: rgba(0, 22, 22, 0.4);
+  }
+  
+  nav header {
+    margin: 20px 0 20px 0;
+    font-weight: bold;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  nav li {
+    padding: 20px 10px 20px 30px;
+    border-top: 1px solid;
+    border-color: rgba(0, 22, 22, 0.4);
+    text-align: left;
+  }
+  
+  li a {
+    font-size: 0.9em;
+    text-decoration: none;
+    color: black;
+  }
+  
+  a:hover {
+    color: #18396e;
+    text-decoration: underline;
+  }
+  
+  #main-doc {
+    grid-area: mainblock;
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 2em;
+  }
+  
+  .main-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  section header {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #122b54;
+  }
+  
+  img {
+    display: flex;
+    max-width: 100%;
+    max-height: 350px;
+  }
+  
+  p {
+    text-align: justify;
+  }
+  
+  pre {
+    font-size: 0.5em;
+  }
+  
+  
+  @media (max-width: 650px) {
+    .grid {
+      grid-template: 275px 1fr / 100%;
+      grid-template-areas:
+        "navbar" 
+        "mainblock";
+    }
+    
+    nav ul {
+      border: 1px solid;
+      height: 275px;
+      width: 100%;
+    }
+  
+    nav {
+      position: absolute;  
+      top: 0px;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      max-height: 275px;
+      border: none;
+      z-index: 1;
+      border-bottom: 2px solid;
+    }
+    
+    .main-section {
+      padding: 0;
+    }
+  }
